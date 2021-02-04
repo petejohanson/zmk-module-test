@@ -32,4 +32,4 @@ jobs:
       - name: Update modules (west update)
         run: west update
       - name: West Build (xiao soloe)
-        run: cd build && west build -s ../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo
+        run: cd build && west build -s ../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo -DZEPHYR_MODULES=../

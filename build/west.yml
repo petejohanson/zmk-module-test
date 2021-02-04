@@ -9,7 +9,5 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: mdk_solo
-      path: ../
   self:
     path: build
