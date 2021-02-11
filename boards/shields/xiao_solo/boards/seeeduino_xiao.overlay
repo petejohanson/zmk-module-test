@@ -1,0 +1,42 @@
+
+/ {
+	xiao_d: connector_d {
+		compatible = "seeeduino,xiao,gpio";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map
+			= <0 0 &porta 2 0>		/* D0 */
+			, <1 0 &porta 4 0>		/* D1 */
+			, <2 0 &porta 10 0>		/* D2 */
+			, <3 0 &porta 11 0>		/* D3 */
+			, <4 0 &porta 8 0>		/* D4 */
+			, <5 0 &porta 9 0>		/* D5 */
+			, <6 0 &portb 8 0>		/* D6 */
+			, <7 0 &portb 9 0>		/* D7 */
+			, <8 0 &porta 7 0>		/* D8 */
+			, <9 0 &porta 5 0>		/* D9 */
+			, <10 0 &porta 6 0>		/* D10 */
+			;
+	};
+
+	xiao_a: connector_a {
+		compatible = "seeeduino,xiao,gpio";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map
+			= <0 0  &xiao_d 0 0>	/* A0 */
+			, <1 0  &xiao_d 1 0>	/* A1 */
+			, <2 0  &xiao_d 2 0>	/* A2 */
+			, <3 0  &xiao_d 3 0>	/* A3 */
+			, <4 0  &xiao_d 4 0>	/* A4 */
+			, <5 0  &xiao_d 5 0>	/* A5 */
+			, <6 0  &xiao_d 6 0>	/* A6 */
+			, <7 0  &xiao_d 7 0>	/* A7 */
+			, <8 0  &xiao_d 8 0>	/* A8 */
+			, <9 0  &xiao_d 9 0>	/* A9 */
+			, <10 0 &xiao_d 10 0>	/* A10 */
+			;
+	};
+};
