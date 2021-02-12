@@ -17,15 +17,15 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+            build/modules/
+            build/tools/
+            build/zephyr/
+            build/bootloader/
+            build/zmk/
+          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
+            ${{ runner.os }}-test-${{ env.cache-name }}-
+            ${{ runner.os }}-test-
             ${{ runner.os }}-
       - name: Initialize workspace (west init)
         run: west init -l build/test
