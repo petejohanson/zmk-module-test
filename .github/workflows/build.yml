@@ -28,10 +28,10 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Initialize workspace (west init)
-        run: west init -l build
+        run: west init -l build/test
       - name: Update modules (west update)
         run: west update
       - name: Export Zephyr (west zephyr-export)
         run: west zephyr-export
       - name: West Build (xiao soloe)
-        run: cd build && west build -s ../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo -DZEPHYR_MODULES=../
+        run: cd build/test && west build -s ../../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo -DZEPHYR_MODULES=$(pwd)/../../
