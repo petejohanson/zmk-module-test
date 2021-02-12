@@ -30,8 +30,8 @@ jobs:
       - name: Initialize workspace (west init)
         run: west init -l build/test
       - name: Update modules (west update)
-        run: west update
+        run: cd build/ && west update
       - name: Export Zephyr (west zephyr-export)
-        run: west zephyr-export
+        run: cd build/ && west zephyr-export
       - name: West Build (xiao soloe)
-        run: cd build/test && west build -s ../../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo -DZEPHYR_MODULES=$(pwd)/../../
+        run: cd build/test && west build -s ../zmk/app -b seeeduino_xiao -- -DSHIELD=xiao_solo -DZEPHYR_MODULES=$(pwd)/../../
