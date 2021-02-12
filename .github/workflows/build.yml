@@ -34,4 +34,4 @@ jobs:
       - name: Export Zephyr (west zephyr-export)
         run: cd build/ && west zephyr-export
       - name: West Build (xiao soloe)
-        run: cd build/test && west build -s ../zmk/app -b nrf52840_mdk -- -DSHIELD=mdk_trio -DZEPHYR_MODULES=$(pwd)/../../
+        run: cd build/test && west build -s ../zmk/app -b nrf52840_mdk -- -DSHIELD=mdk_trio -DZEPHYR_EXTRA_MODULES=$(pwd)/../../
